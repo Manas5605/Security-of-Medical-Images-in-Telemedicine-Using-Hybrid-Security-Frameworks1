@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stored Images</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blockchain.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>All Stored Encrypted Images</h2>
+        {% for img in image_paths %}
+            <img src="{{ img }}" alt="Stored Encrypted Image" />
+        {% endfor %}
+        <button id="store-other-images-btn">Store Other Images</button>
+    </div>
+    <script>
+        document.getElementById("store-other-images-btn").addEventListener("click", () => {
+            window.location.href = "/watermarking";
+        });
+    </script>
+</body>
+</html>

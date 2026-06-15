@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermarking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/watermarking.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload Medical Image for Watermarking</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="imageInput" name="image" accept="image/*" required>
+            <button type="submit">Upload & Apply Watermark</button>
+        </form>
+        
+        <div id="result" class="hidden">
+            <h3>Watermarked Image</h3>
+            <img id="watermarkedImage" src="" alt="Watermarked Image">
+            <h3>Histogram</h3>
+            <img id="histogramImage" src="" alt="Histogram">
+            <br>
+            <button id="nextButton">Proceed to Steganography</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById("nextButton").addEventListener("click", function() {
+            window.location.href = "{{ url_for('stego') }}";
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/watermarking.js') }}"></script>
+</body>
+</html>

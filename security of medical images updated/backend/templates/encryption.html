@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/encryption.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Encryption Process</h2>
+
+        <h3>Stego Image</h3>
+        <img id="stegoImage" src="{{ stego_image }}" alt="Stego Image">
+
+        <button id="encryptButton">Apply Encryption</button>
+
+        <div id="encryptionResults" class="hidden">
+            
+            <h3>DNA Encoded Data</h3>
+            <textarea id="dnaEncoded" rows="5" readonly></textarea>
+            
+            <h3>Encrypted Image</h3>
+            <img id="encryptedImage" src="" alt="Encrypted Image">
+            
+            <h3>Histogram of Encrypted Image</h3>
+            <img id="encryptedHistogram" src="" alt="Histogram of Encrypted Image">
+        </div>
+    </div>
+    <button id="storeBlockchainButton" class="hidden">Store in Blockchain</button>
+
+    <script src="{{ url_for('static', filename='js/encryption.js') }}"></script>
+</body>
+</html>

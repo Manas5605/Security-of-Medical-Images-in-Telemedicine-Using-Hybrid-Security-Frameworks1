@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stego.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Steganography Processing</h2>
+        
+        <!-- Display Watermarked Image -->
+        <h3>Watermarked Image</h3>
+        <img id="watermarkedImage" src="{{ watermarked_image }}" alt="Watermarked Image">
+
+        <form id="stegoForm">
+            <input type="file" id="stegoInput" accept="image/*">
+            <button type="submit">Apply Steganography</button>
+        </form>
+
+        <!-- Display Stego Image and Histogram -->
+        <div id="stegoResults" class="hidden">
+            <h3>Stego Image</h3>
+            <img id="stegoImage" src="" alt="Stego Image">
+            
+            <h3>Histogram of Stego Image</h3>
+            <img id="stegoHistogram" src="" alt="Histogram of Stego Image">
+        </div>
+
+        <!-- Proceed to Encryption -->
+        <button id="nextButton" class="hidden">Proceed to Encryption</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/stego.js') }}"></script>
+</body>
+</html>
